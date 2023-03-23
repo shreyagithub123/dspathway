@@ -1,0 +1,81 @@
+import React, { Component } from 'react'
+import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+import { Nav, Navbar } from 'react-bootstrap'
+// import { browserHistory, Router, Route,Routes } from 'react-router';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './Home'
+import People from './People'
+import Campuses from './Campuses'
+import Sponsors from './Sponsors'
+import Projects from './Projects'
+import Testimonials from './Testimonials'
+import Fellowships from './Fellowships'
+
+
+
+export default class Header extends Component {
+  render() {
+    return (
+        <div className="container">
+        <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <Link
+            to="/"
+            className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+          >
+            <span className="fs-4">My app</span>
+          </Link>
+      
+          <ul className="nav nav-pills">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="People" className="nav-link">
+                People
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="Campuses" className="nav-link">
+                Campuses
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="Sponsors" className="nav-link">
+                Sponsors
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="Projects" className="nav-link">
+                Projects
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="Testimonials" className="nav-link">
+                Testimonials
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="Fellowships" className="nav-link">
+                Fellowships
+              </Link>
+            </li>
+          </ul>
+        </header>
+      
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="People" element={<People/>}></Route>
+          <Route path="Campuses" element={<Campuses />}></Route>
+          <Route path="Sponsors" element={<Sponsors />}></Route>
+          <Route path="Projects" element={<Projects/>}></Route>
+          <Route path="Testimonials" element={<Testimonials />}></Route>
+          <Route path="Fellowships" element={<Fellowships />}></Route>
+        </Routes>
+      </div>
+    )
+  }
+}
